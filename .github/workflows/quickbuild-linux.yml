@@ -105,28 +105,28 @@ jobs:
           ls -lsh
           rm -f chromium-$VERSION.tar.xz out.tar.zst
           mv out chromium-$VERSION && cd chromium-$VERSION
-          patch -p1 < ../baraqah$VMAJOR-$VERSION-branding.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-component-update-url.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-time-server.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-domain-reliability.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-root-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-banned-tld.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-baraqah-dns.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-notrash-component-extension.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-gaia-to-baia.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-baraqah-safe-browsing.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-browser-feedback.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-extensions-manifestv2.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-opera-addons-extension-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-pin-extension-beside-omnibar.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-porda-ai-extension-and-kahf-doh-server.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/linux/baraqah$VMAJOR-linux-keyring.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/linux/baraqah$VMAJOR-linux-installer.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/linux/baraqah$VMAJOR-linux-config-dir-location.patch
-          cp -rf ../desktop/baraqah/chrome .
-          cp -rf ../desktop/baraqah/components .
-          cp -rf ../desktop/baraqah/ui .
-          cp -rf ../extensions/baraqah/chrome .
+          patch -p1 < ../mango$VMAJOR-$VERSION-branding.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-component-update-url.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-time-server.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-domain-reliability.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-root-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-banned-tld.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-mango-dns.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-notrash-component-extension.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-gaia-to-baia.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-mango-safe-browsing.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-browser-feedback.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-extensions-manifestv2.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-opera-addons-extension-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-pin-extension-beside-omnibar.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-porda-ai-extension-and-kahf-doh-server.patch
+          patch -p1 < ../patches/mango/$VMAJOR/linux/mango$VMAJOR-linux-keyring.patch
+          patch -p1 < ../patches/mango/$VMAJOR/linux/mango$VMAJOR-linux-installer.patch
+          patch -p1 < ../patches/mango/$VMAJOR/linux/mango$VMAJOR-linux-config-dir-location.patch
+          cp -rf ../desktop/mango/chrome .
+          cp -rf ../desktop/mango/components .
+          cp -rf ../desktop/mango/ui .
+          cp -rf ../extensions/mango/chrome .
           pwd && ls -lsh chrome/app/theme/chromium
           ls -lsh ui/webui/resources/images
           sudo build/install-build-deps.sh
@@ -160,13 +160,13 @@ jobs:
       - name: Upload DEB packages
         uses: actions/upload-artifact@v4
         with:
-          name: packages-linux-baraqah-deb-${{ env.VERSION }}
+          name: packages-linux-mango-deb-${{ env.VERSION }}
           path: /home/runner/work/mango/mango/chromium-src/chromium-${{ env.VERSION }}/out/release/*.deb
 
       - name: Upload RPM packages
         uses: actions/upload-artifact@v4
         with:
-          name: packages-linux-baraqah-rpm-${{ env.VERSION }}
+          name: packages-linux-mango-rpm-${{ env.VERSION }}
           path: /home/runner/work/mango/mango/chromium-src/chromium-${{ env.VERSION }}/out/release/*.rpm
 
       - name: Compress artifacts

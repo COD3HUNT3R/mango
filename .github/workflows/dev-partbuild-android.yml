@@ -117,9 +117,9 @@ jobs:
           find . -type f -a \( -name "*.grd" -o -name "*.grdp" -o -name "*.xtb" \) -a -exec sed -i -e "s/Chromium/Baraqah/g" {} +
           find . -type f -a \( -name "*.grd" -o -name "*.grdp" -o -name "*.xtb" \) -a -exec sed -i -e "s/Chrome/Baraqah/g" {} +
           find . -type f -a \( -name "*.grd" -o -name "*.grdp" -o -name "*.xtb" \) -a -exec sed -i -e "s/Google/Baraqah/g" {} +
-          find . -type f -a \( -name "*.cc" -o -name "*.h" \) -a -exec sed -i -e "s/support.google.com/support.baraqah.org/g" {} +
+          find . -type f -a \( -name "*.cc" -o -name "*.h" \) -a -exec sed -i -e "s/support.google.com/support.mango.org/g" {} +
           cd ..
-          diff -urN a b > baraqah$VMAJOR-$VERSION-branding.patch
+          diff -urN a b > mango$VMAJOR-$VERSION-branding.patch
           ls -lsh && pwd
 
       - name: Upload patches
@@ -207,13 +207,13 @@ jobs:
           ls -lsh
           rm -f chromium-$VERSION.tar.xz
           cd chromium-$VERSION
-          patch -p1 < ../baraqah$VMAJOR-$VERSION-branding.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-root-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-banned-tld.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-baraqah-dns.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/android/baraqah$VMAJOR-news-feeds.patch
+          patch -p1 < ../mango$VMAJOR-$VERSION-branding.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-root-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-banned-tld.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-mango-dns.patch
+          patch -p1 < ../patches/mango/$VMAJOR/android/mango$VMAJOR-news-feeds.patch
           rm -rf chrome/android/java/res_chromium_base
-          cp -r ../android/baraqah/chrome .
+          cp -r ../android/mango/chrome .
           pwd && ls -lsh chrome/android/java/res_chromium_base
           sudo build/install-build-deps.sh
           mkdir -p out/release && cd out/release
@@ -330,13 +330,13 @@ jobs:
           ls -lsh
           rm -f chromium-$VERSION.tar.xz out.tar.zst
           mv out chromium-$VERSION && cd chromium-$VERSION
-          patch -p1 < ../baraqah$VMAJOR-$VERSION-branding.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-root-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-banned-tld.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-baraqah-dns.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/android/baraqah$VMAJOR-news-feeds.patch
+          patch -p1 < ../mango$VMAJOR-$VERSION-branding.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-root-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-banned-tld.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-mango-dns.patch
+          patch -p1 < ../patches/mango/$VMAJOR/android/mango$VMAJOR-news-feeds.patch
           rm -rf chrome/android/java/res_chromium_base
-          cp -r ../android/baraqah/chrome .
+          cp -r ../android/mango/chrome .
           pwd && ls -lsh chrome/android/java/res_chromium_base
 
       - name: Build content/public/browser
@@ -463,13 +463,13 @@ jobs:
           ls -lsh
           rm -f chromium-$VERSION.tar.xz out.tar.zst
           mv out chromium-$VERSION && cd chromium-$VERSION
-          patch -p1 < ../baraqah$VMAJOR-$VERSION-branding.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-root-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-banned-tld.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-baraqah-dns.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/android/baraqah$VMAJOR-news-feeds.patch
+          patch -p1 < ../mango$VMAJOR-$VERSION-branding.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-root-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-banned-tld.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-mango-dns.patch
+          patch -p1 < ../patches/mango/$VMAJOR/android/mango$VMAJOR-news-feeds.patch
           rm -rf chrome/android/java/res_chromium_base
-          cp -r ../android/baraqah/chrome .
+          cp -r ../android/mango/chrome .
           pwd && ls -lsh chrome/android/java/res_chromium_base
 
       - name: Build chrome/browser/ui
@@ -584,13 +584,13 @@ jobs:
           ls -lsh
           rm -f chromium-$VERSION.tar.xz out.tar.zst
           mv out chromium-$VERSION && cd chromium-$VERSION
-          patch -p1 < ../baraqah$VMAJOR-$VERSION-branding.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-root-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-banned-tld.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-baraqah-dns.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/android/baraqah$VMAJOR-news-feeds.patch
+          patch -p1 < ../mango$VMAJOR-$VERSION-branding.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-root-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-banned-tld.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-mango-dns.patch
+          patch -p1 < ../patches/mango/$VMAJOR/android/mango$VMAJOR-news-feeds.patch
           rm -rf chrome/android/java/res_chromium_base
-          cp -r ../android/baraqah/chrome .
+          cp -r ../android/mango/chrome .
           pwd && ls -lsh chrome/android/java/res_chromium_base
 
       - name: Build chrome/browser
@@ -699,13 +699,13 @@ jobs:
           ls -lsh
           rm -f chromium-$VERSION.tar.xz out.tar.zst
           mv out chromium-$VERSION && cd chromium-$VERSION
-          patch -p1 < ../baraqah$VMAJOR-$VERSION-branding.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-root-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-banned-tld.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-baraqah-dns.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/android/baraqah$VMAJOR-news-feeds.patch
+          patch -p1 < ../mango$VMAJOR-$VERSION-branding.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-root-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-banned-tld.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-mango-dns.patch
+          patch -p1 < ../patches/mango/$VMAJOR/android/mango$VMAJOR-news-feeds.patch
           rm -rf chrome/android/java/res_chromium_base
-          cp -r ../android/baraqah/chrome .
+          cp -r ../android/mango/chrome .
           pwd && ls -lsh chrome/android/java/res_chromium_base
 
       - name: Build apk
@@ -814,13 +814,13 @@ jobs:
           ls -lsh
           rm -f chromium-$VERSION.tar.xz out.tar.zst
           mv out chromium-$VERSION && cd chromium-$VERSION
-          patch -p1 < ../baraqah$VMAJOR-$VERSION-branding.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-root-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-banned-tld.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-baraqah-dns.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/android/baraqah$VMAJOR-news-feeds.patch
+          patch -p1 < ../mango$VMAJOR-$VERSION-branding.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-root-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-banned-tld.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-mango-dns.patch
+          patch -p1 < ../patches/mango/$VMAJOR/android/mango$VMAJOR-news-feeds.patch
           rm -rf chrome/android/java/res_chromium_base
-          cp -r ../android/baraqah/chrome .
+          cp -r ../android/mango/chrome .
           pwd && ls -lsh chrome/android/java/res_chromium_base
 
       - name: Build apk

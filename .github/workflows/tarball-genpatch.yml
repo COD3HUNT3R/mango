@@ -123,7 +123,7 @@ jobs:
           find . -type f -a \( -name "*.grd" -o -name "*.grdp" -o -name "*.xtb" \) -a -exec sed -i -e "s/Chromium/Baraqah/g" {} +
           find . -type f -a \( -name "*.grd" -o -name "*.grdp" -o -name "*.xtb" \) -a -exec sed -i -e "s/Chrome/Baraqah/g" {} +
           cd ..
-          diff -urN a b > baraqah$VMAJOR-$VERSION-branding.patch
+          diff -urN a b > mango$VMAJOR-$VERSION-branding.patch
           ls -lsh && pwd
 
       - name: Upload artifact
@@ -241,7 +241,7 @@ jobs:
           find . -type f -a \( -name "*.grd" -o -name "*.grdp" -o -name "*.xtb" -o -name "*.xml" \) -a -exec sed -i -e "s/Chromium/Baraqah/g" {} +
           cd ..
           ls -lsh && pwd
-          diff -urN a b > baraqah$VMAJOR-$VERSION-branding.patch
+          diff -urN a b > mango$VMAJOR-$VERSION-branding.patch
           ls -lsh && pwd
 
       - name: Upload artifact
@@ -325,7 +325,7 @@ jobs:
           find . -type f -a \( -name "*.grd" -o -name "*.grdp" -o -name "*.xtb" \) -a -exec sed -i -e "s/Google/Baraqah/g" {} +
           cd ..
           ls -lsh && pwd
-          diff -urN a b > baraqah$VMAJOR-$VERSION-branding.patch
+          diff -urN a b > mango$VMAJOR-$VERSION-branding.patch
           ls -lsh && pwd
 
       - name: Upload windows patch

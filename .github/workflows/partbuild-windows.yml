@@ -82,7 +82,7 @@ jobs:
           find . -type f -a \( -name "*.grd" -o -name "*.grdp" -o -name "*.xtb" \) -a -exec sed -i -e "s/Google/Baraqah/g" {} +
           cd ..
           ls -lsh && pwd
-          diff -urN a b > baraqah$VMAJOR-$VERSION-branding.patch
+          diff -urN a b > mango$VMAJOR-$VERSION-branding.patch
           ls -lsh && pwd
 
       - name: Upload windows patch
@@ -151,26 +151,26 @@ jobs:
           ls -lsh
           rm -f chromium-$VERSION.tar.xz
           cd chromium-$VERSION
-          patch -p1 < ../baraqah$VMAJOR-$VERSION-branding.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-component-update-url.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-time-server.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-domain-reliability.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-root-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-banned-tld.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-baraqah-dns.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-notrash-component-extension.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-gaia-to-baia.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-baraqah-safe-browsing.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-browser-feedback.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-extensions-manifestv2.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-opera-addons-extension-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-pin-extension-beside-omnibar.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-porda-ai-extension-and-kahf-doh-server.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/windows/baraqah$VMAJOR-windows-install-directory-constants.patch
-          cp -rf ../desktop/baraqah/chrome .
-          cp -rf ../desktop/baraqah/components .
-          cp -rf ../desktop/baraqah/ui .
-          cp -rf ../extensions/baraqah/chrome .
+          patch -p1 < ../mango$VMAJOR-$VERSION-branding.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-component-update-url.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-time-server.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-domain-reliability.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-root-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-banned-tld.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-mango-dns.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-notrash-component-extension.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-gaia-to-baia.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-mango-safe-browsing.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-browser-feedback.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-extensions-manifestv2.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-opera-addons-extension-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-pin-extension-beside-omnibar.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-porda-ai-extension-and-kahf-doh-server.patch
+          patch -p1 < ../patches/mango/$VMAJOR/windows/mango$VMAJOR-windows-install-directory-constants.patch
+          cp -rf ../desktop/mango/chrome .
+          cp -rf ../desktop/mango/components .
+          cp -rf ../desktop/mango/ui .
+          cp -rf ../extensions/mango/chrome .
           pwd && ls -lsh chrome/app/theme/chromium
           mkdir -p out/release && cd out/release
           curl.exe -o args.gn https://raw.githubusercontent.com/COD3HUNT3R/mango/refs/heads/main/windows-args.gn
@@ -271,26 +271,26 @@ jobs:
           ls -lsh
           rm -f chromium-$VERSION.tar.xz out.tar.zst
           mv out chromium-$VERSION && cd chromium-$VERSION
-          patch -p1 < ../baraqah$VMAJOR-$VERSION-branding.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-component-update-url.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-time-server.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-domain-reliability.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-root-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-banned-tld.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-baraqah-dns.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-notrash-component-extension.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-gaia-to-baia.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-baraqah-safe-browsing.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-browser-feedback.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-extensions-manifestv2.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-opera-addons-extension-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-pin-extension-beside-omnibar.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-porda-ai-extension-and-kahf-doh-server.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/windows/baraqah$VMAJOR-windows-install-directory-constants.patch
-          cp -rf ../desktop/baraqah/chrome .
-          cp -rf ../desktop/baraqah/components .
-          cp -rf ../desktop/baraqah/ui .
-          cp -rf ../extensions/baraqah/chrome .
+          patch -p1 < ../mango$VMAJOR-$VERSION-branding.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-component-update-url.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-time-server.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-domain-reliability.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-root-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-banned-tld.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-mango-dns.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-notrash-component-extension.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-gaia-to-baia.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-mango-safe-browsing.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-browser-feedback.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-extensions-manifestv2.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-opera-addons-extension-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-pin-extension-beside-omnibar.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-porda-ai-extension-and-kahf-doh-server.patch
+          patch -p1 < ../patches/mango/$VMAJOR/windows/mango$VMAJOR-windows-install-directory-constants.patch
+          cp -rf ../desktop/mango/chrome .
+          cp -rf ../desktop/mango/components .
+          cp -rf ../desktop/mango/ui .
+          cp -rf ../extensions/mango/chrome .
           pwd && ls -lsh chrome/app/theme/chromium
 
       - name: Build content/public/browser
@@ -390,26 +390,26 @@ jobs:
           ls -lsh
           rm -f chromium-$VERSION.tar.xz out.tar.zst
           mv out chromium-$VERSION && cd chromium-$VERSION
-          patch -p1 < ../baraqah$VMAJOR-$VERSION-branding.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-component-update-url.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-time-server.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-domain-reliability.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-root-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-banned-tld.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-baraqah-dns.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-notrash-component-extension.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-gaia-to-baia.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-baraqah-safe-browsing.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-browser-feedback.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-extensions-manifestv2.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-opera-addons-extension-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-pin-extension-beside-omnibar.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-porda-ai-extension-and-kahf-doh-server.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/windows/baraqah$VMAJOR-windows-install-directory-constants.patch
-          cp -rf ../desktop/baraqah/chrome .
-          cp -rf ../desktop/baraqah/components .
-          cp -rf ../desktop/baraqah/ui .
-          cp -rf ../extensions/baraqah/chrome .
+          patch -p1 < ../mango$VMAJOR-$VERSION-branding.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-component-update-url.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-time-server.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-domain-reliability.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-root-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-banned-tld.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-mango-dns.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-notrash-component-extension.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-gaia-to-baia.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-mango-safe-browsing.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-browser-feedback.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-extensions-manifestv2.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-opera-addons-extension-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-pin-extension-beside-omnibar.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-porda-ai-extension-and-kahf-doh-server.patch
+          patch -p1 < ../patches/mango/$VMAJOR/windows/mango$VMAJOR-windows-install-directory-constants.patch
+          cp -rf ../desktop/mango/chrome .
+          cp -rf ../desktop/mango/components .
+          cp -rf ../desktop/mango/ui .
+          cp -rf ../extensions/mango/chrome .
           pwd && ls -lsh chrome/app/theme/chromium
 
       - name: Build chrome/browser/ui
@@ -498,26 +498,26 @@ jobs:
           ls -lsh
           rm -f chromium-$VERSION.tar.xz out.tar.zst
           mv out chromium-$VERSION && cd chromium-$VERSION
-          patch -p1 < ../baraqah$VMAJOR-$VERSION-branding.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-component-update-url.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-time-server.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-domain-reliability.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-root-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-banned-tld.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-baraqah-dns.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-notrash-component-extension.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-gaia-to-baia.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-baraqah-safe-browsing.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-browser-feedback.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-extensions-manifestv2.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-opera-addons-extension-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-pin-extension-beside-omnibar.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-porda-ai-extension-and-kahf-doh-server.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/windows/baraqah$VMAJOR-windows-install-directory-constants.patch
-          cp -rf ../desktop/baraqah/chrome .
-          cp -rf ../desktop/baraqah/components .
-          cp -rf ../desktop/baraqah/ui .
-          cp -rf ../extensions/baraqah/chrome .
+          patch -p1 < ../mango$VMAJOR-$VERSION-branding.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-component-update-url.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-time-server.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-domain-reliability.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-root-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-banned-tld.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-mango-dns.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-notrash-component-extension.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-gaia-to-baia.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-mango-safe-browsing.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-browser-feedback.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-extensions-manifestv2.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-opera-addons-extension-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-pin-extension-beside-omnibar.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-porda-ai-extension-and-kahf-doh-server.patch
+          patch -p1 < ../patches/mango/$VMAJOR/windows/mango$VMAJOR-windows-install-directory-constants.patch
+          cp -rf ../desktop/mango/chrome .
+          cp -rf ../desktop/mango/components .
+          cp -rf ../desktop/mango/ui .
+          cp -rf ../extensions/mango/chrome .
           pwd && ls -lsh chrome/app/theme/chromium
 
       - name: Build chrome/browser/ui
@@ -606,26 +606,26 @@ jobs:
           ls -lsh
           rm -f chromium-$VERSION.tar.xz out.tar.zst
           mv out chromium-$VERSION && cd chromium-$VERSION
-          patch -p1 < ../baraqah$VMAJOR-$VERSION-branding.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-component-update-url.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-time-server.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-domain-reliability.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-root-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-banned-tld.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-baraqah-dns.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-notrash-component-extension.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-gaia-to-baia.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-baraqah-safe-browsing.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-browser-feedback.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-extensions-manifestv2.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-opera-addons-extension-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-pin-extension-beside-omnibar.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/desktop/baraqah$VMAJOR-porda-ai-extension-and-kahf-doh-server.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/windows/baraqah$VMAJOR-windows-install-directory-constants.patch
-          cp -rf ../desktop/baraqah/chrome .
-          cp -rf ../desktop/baraqah/components .
-          cp -rf ../desktop/baraqah/ui .
-          cp -rf ../extensions/baraqah/chrome .
+          patch -p1 < ../mango$VMAJOR-$VERSION-branding.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-component-update-url.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-time-server.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-domain-reliability.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-root-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-banned-tld.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-mango-dns.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-notrash-component-extension.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-gaia-to-baia.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-mango-safe-browsing.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-browser-feedback.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-extensions-manifestv2.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-opera-addons-extension-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-pin-extension-beside-omnibar.patch
+          patch -p1 < ../patches/mango/$VMAJOR/desktop/mango$VMAJOR-porda-ai-extension-and-kahf-doh-server.patch
+          patch -p1 < ../patches/mango/$VMAJOR/windows/mango$VMAJOR-windows-install-directory-constants.patch
+          cp -rf ../desktop/mango/chrome .
+          cp -rf ../desktop/mango/components .
+          cp -rf ../desktop/mango/ui .
+          cp -rf ../extensions/mango/chrome .
           pwd && ls -lsh chrome/app/theme/chromium
 
       - name: Build chrome/browser

@@ -104,15 +104,15 @@ jobs:
           ls -lsh
           rm -f chromium-$VERSION.tar.xz out.tar.zst
           mv out chromium-$VERSION && cd chromium-$VERSION
-          patch -p1 < ../baraqah$VMAJOR-$VERSION-branding.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-component-update-url.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-root-store.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-banned-tld.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/common/baraqah$VMAJOR-baraqah-dns.patch
-          patch -p1 < ../patches/baraqah/$VMAJOR/android/baraqah$VMAJOR-news-feeds.patch
+          patch -p1 < ../mango$VMAJOR-$VERSION-branding.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-component-update-url.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-root-store.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-banned-tld.patch
+          patch -p1 < ../patches/mango/$VMAJOR/common/mango$VMAJOR-mango-dns.patch
+          patch -p1 < ../patches/mango/$VMAJOR/android/mango$VMAJOR-news-feeds.patch
           rm -rf chrome/android/java/res_chromium_base
-          cp -rf ../android/baraqah/chrome .
-          cp -rf ../android/baraqah/components .
+          cp -rf ../android/mango/chrome .
+          cp -rf ../android/mango/components .
           pwd && ls -lsh chrome/android/java/res_chromium_base
 
       - name: Build apk
@@ -120,13 +120,13 @@ jobs:
         run: |
           cd $SRCDIR/chromium-$VERSION
           ninja -j 4 -C out/release chrome_public_apk
-          mv out/release/apks/ChromePublic.apk out/release/apks/baraqah-browser-$VERSION.apk
+          mv out/release/apks/ChromePublic.apk out/release/apks/mango-browser-$VERSION.apk
           ls -lsh out/release/apks
 
       - name: Upload apks
         uses: actions/upload-artifact@v4
         with:
-          name: baraqah-apks-${{ env.VERSION }}
+          name: mango-apks-${{ env.VERSION }}
           path: /home/runner/work/mango/mango/chromium-src/chromium-${{ env.VERSION }}/out/release/apks
 
       - name: Compress artifacts
