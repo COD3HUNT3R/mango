@@ -11,8 +11,8 @@ jobs:
   quicklinux:
       runs-on: ubuntu-latest
       env:
-        VMAJOR: 96
-        VERSION: 96.0.4664.110
+        VMAJOR: 108
+        VERSION: 108.0.5359.124
         SRCDIR: chromium-src
       steps:
       - name: Maximize build space
