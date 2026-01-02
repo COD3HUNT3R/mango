@@ -132,7 +132,7 @@ jobs:
         shell: bash
         run: |
           cd ${{ env.SRCDIR }}/chromium-$VERSION
-          ZSTD_CLEVEL=12 tar -I zstd --force-local -cvpf D:/a/gollum/gollum/chromium-src/out.tar.zst ./out
+          ZSTD_CLEVEL=12 tar -I zstd --force-local -cvpf D:/a/mango/mango/chromium-src/out.tar.zst ./out
 
       - name: Upload out directory
         uses: actions/upload-artifact@v4

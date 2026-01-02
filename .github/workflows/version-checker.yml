@@ -10,7 +10,7 @@ on:
 jobs:
   check:
     # do not run in forks
-    if: github.repository == 'COD3HUNT3R/gollum'
+    if: github.repository == 'COD3HUNT3R/mango'
     runs-on: ubuntu-latest
     steps:
       - name: Set maintainer groups
