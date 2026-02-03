@@ -2,7 +2,7 @@
 name: Create an "Updating to Chromium x.x.x.x"
 about: For letting the community track progress to a new stable Chromium
 title: Updating to Chromium {{ env.VERSION }} on {{ env.PLATFORM }}
-labels: update
+labels: "{{ env.PLATFORM }}"
 assignees: ''
 
 ---
